@@ -12,14 +12,11 @@
 
 <br/>
 
-[![Live Portfolio](https://img.shields.io/badge/%F0%9F%8C%90_LIVE_PORTFOLIO-Visit_Website-070707?style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=1a1a1a)](https://nishantkumrmishra.github.io/nishantkumrmishra/)
-[![GitHub Profile](https://img.shields.io/badge/GITHUB-nishantkumrmishra-070707?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1a1a)](https://github.com/nishantkumrmishra)
+<a href="https://nishantkumrmishra.github.io/nishantkumrmishra/">
+  <img src="docs/assets/live-portfolio.svg" alt="Visit Live Portfolio - nishantkumrmishra.github.io" width="420">
+</a>
 
-<br/>
-
-👉 **[Explore the Live Interactive Architectural Portfolio &rarr;](https://nishantkumrmishra.github.io/nishantkumrmishra/)**
-
-<br/>
+<br/><br/>
 
 <img src="https://komarev.com/ghpvc/?username=nishantkumrmishra&label=PROFILE%20VIEWS&color=222222&style=flat-square" alt="Profile views" />
 <img src="https://img.shields.io/github/followers/nishantkumrmishra?label=FOLLOWERS&style=flat-square&color=222222&labelColor=555555" alt="Followers" />
