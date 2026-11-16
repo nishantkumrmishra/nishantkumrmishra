@@ -1,100 +1,80 @@
 <div align="center">
 
-# Nishant
+# NISHANT KUMAR MISHRA
 
-**Open-Source Developer · India**
+`nishantkumrmishra`
 
-Self-taught developer exploring software engineering, AI, automation, and emerging technologies.
+Open-Source Developer · India
 
-<img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME&label=Profile%20Views&color=0e75b6&style=flat-square" alt="Profile views" />
-<img src="https://img.shields.io/github/followers/YOUR_USERNAME?label=Followers&style=flat-square&color=0e75b6" alt="Followers" />
-<img src="https://img.shields.io/github/stars/YOUR_USERNAME?label=Stars&style=flat-square&color=0e75b6" alt="Stars" />
+*Build first. Learn continuously.*
+
+<img src="https://komarev.com/ghpvc/?username=nishantkumrmishra&label=PROFILE%20VIEWS&color=222222&style=flat-square" alt="Profile views" />
+<img src="https://img.shields.io/github/followers/nishantkumrmishra?label=FOLLOWERS&style=flat-square&color=222222&labelColor=555555" alt="Followers" />
+<img src="https://img.shields.io/github/stars/nishantkumrmishra?label=STARS&style=flat-square&color=222222&labelColor=555555" alt="Stars" />
 
 </div>
 
 ---
 
-## About
+### About
 
-I enjoy experimenting with ideas, building independent projects, and learning through hands-on development. Most of my work revolves around creating useful software, exploring new architectures, and understanding how things work under the hood.
+Self-taught developer exploring software engineering, AI, automation, and emerging technologies. I build useful software, explore new architectures, and learn how things work under the hood.
 
-## Areas of Interest
-
-- Open-source software development
 - Desktop applications and software architecture
-- Artificial intelligence and agentic systems
 - Browser technologies and Chromium
+- AI and agentic systems
 - Automation and developer tools
-- Media management and multimedia applications
+- Media management and multimedia apps
 - Cybersecurity and system experimentation
 
-## Tech Stack
+---
 
-**Development**
+### Projects
 
-<p>
-  <img src="https://img.shields.io/badge/JavaScript-111111?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="JavaScript" />
-  <img src="https://img.shields.io/badge/React-111111?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
-  <img src="https://img.shields.io/badge/Electron-111111?style=for-the-badge&logo=electron&logoColor=47848F" alt="Electron" />
-  <img src="https://img.shields.io/badge/HTML5-111111?style=for-the-badge&logo=html5&logoColor=E34F26" alt="HTML" />
-  <img src="https://img.shields.io/badge/CSS3-111111?style=for-the-badge&logo=css3&logoColor=1572B6" alt="CSS" />
-</p>
+- **LuckyGuy Desktop**<br/>
+  Experimental desktop media management platform. Media organization, metadata, playback, external integrations, modular extensions.
 
-**Tools & Platforms**
+- **LuckyGuy Extensions**<br/>
+  Experimental plugin ecosystem with a custom SDK for independent modules.
 
-<p>
-  <img src="https://img.shields.io/badge/Git-111111?style=for-the-badge&logo=git&logoColor=F05032" alt="Git" />
-  <img src="https://img.shields.io/badge/GitHub-111111?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-  <img src="https://img.shields.io/badge/Windows-111111?style=for-the-badge&logo=windows&logoColor=0078D4" alt="Windows" />
-  <img src="https://img.shields.io/badge/Linux-111111?style=for-the-badge&logo=linux&logoColor=FCC624" alt="Linux" />
-  <img src="https://img.shields.io/badge/PowerShell-111111?style=for-the-badge&logo=powershell&logoColor=5391FE" alt="PowerShell" />
-</p>
+- **Browser Experiments**<br/>
+  Chromium-based browser development, custom interfaces, extensions, and AI-assisted browsing.
 
-**Currently Exploring**
+---
+
+### Tech
 
 <p>
-  <img src="https://img.shields.io/badge/Chromium-111111?style=for-the-badge&logo=googlechrome&logoColor=4285F4" alt="Chromium" />
-  <img src="https://img.shields.io/badge/AI%20Agents-111111?style=for-the-badge&logo=openai&logoColor=white" alt="AI Agents" />
-  <img src="https://img.shields.io/badge/Browser%20Automation-111111?style=for-the-badge&logo=playwright&logoColor=2EAD33" alt="Browser Automation" />
-  <img src="https://img.shields.io/badge/Plugin%20Architectures-111111?style=for-the-badge&logo=puzzle&logoColor=white" alt="Plugin Architectures" />
-  <img src="https://img.shields.io/badge/API%20Integrations-111111?style=for-the-badge&logo=postman&logoColor=FF6C37" alt="API Integrations" />
+  <img src="https://img.shields.io/badge/JavaScript-222222?style=flat-square&logo=javascript&logoColor=white" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/React-222222?style=flat-square&logo=react&logoColor=white" alt="React" />
+  <img src="https://img.shields.io/badge/Electron-222222?style=flat-square&logo=electron&logoColor=white" alt="Electron" />
+  <img src="https://img.shields.io/badge/HTML-222222?style=flat-square&logo=html5&logoColor=white" alt="HTML" />
+  <img src="https://img.shields.io/badge/CSS-222222?style=flat-square&logo=css3&logoColor=white" alt="CSS" />
+  <img src="https://img.shields.io/badge/Git-222222?style=flat-square&logo=git&logoColor=white" alt="Git" />
+  <img src="https://img.shields.io/badge/GitHub-222222?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
+  <img src="https://img.shields.io/badge/Windows-222222?style=flat-square&logo=windows&logoColor=white" alt="Windows" />
+  <img src="https://img.shields.io/badge/Linux-222222?style=flat-square&logo=linux&logoColor=white" alt="Linux" />
+  <img src="https://img.shields.io/badge/PowerShell-222222?style=flat-square&logo=powershell&logoColor=white" alt="PowerShell" />
 </p>
 
-## Selected Projects
+Exploring: Chromium · AI Agents · Browser Automation · Plugin Architectures · API Integrations
 
-| Project | Description |
-| --- | --- |
-| **LuckyGuy Desktop** | An experimental desktop media management platform. Explores media organization, metadata management, playback, external integrations, and a modular extension architecture. |
-| **LuckyGuy Extensions** | An experimental plugin ecosystem that extends desktop application functionality through independent modules and a custom SDK. |
-| **Browser Experiments** | Chromium-based browser development, custom interfaces, browser extensions, and AI-assisted browsing. |
+---
 
-## GitHub Stats
+### Philosophy
 
-<p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&hide_border=true&theme=transparent&title_color=0e75b6&icon_color=0e75b6&text_color=808080" alt="GitHub stats" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&hide_border=true&theme=transparent&title_color=0e75b6&text_color=808080" alt="Top languages" />
-</p>
+1. Build first, learn continuously.
+2. Keep software simple and maintainable.
+3. Prefer modular and extensible architecture.
+4. Experiment with ideas and technologies.
+5. Share useful work with the open-source community.
 
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_USERNAME&hide_border=true&background=00000000&ring=0e75b6&fire=0e75b6&currStreakLabel=808080&sideLabels=808080&currStreakNum=808080&sideNums=808080&dates=808080" alt="Streak" />
-</p>
-
-## Development Philosophy
-
-- Build first, learn continuously.
-- Keep software simple and maintainable.
-- Prefer modular and extensible architecture.
-- Experiment with ideas and technologies.
-- Share useful work with the open-source community.
-
-## Beyond Development
-
-PC gaming · technology · music · hardware · exploring interesting software.
+Outside code: PC gaming · technology · music · hardware
 
 ---
 
 <div align="center">
 
-*Learning, building, experimenting, and improving — one project at a time.*
+*Learning, building, experimenting, and improving, one project at a time.*
 
 </div>
