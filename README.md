@@ -6,7 +6,7 @@
 
 # NISHANT KUMAR MISHRA
 
-`Open-Source Developer · Desktop & Browser Architectures · India`
+`Open-Source Developer · Desktop & CLI Systems · India`
 
 <p>
   <a href="https://nishantkumrmishra.github.io/nishantkumrmishra/"><b>Click to open the website →</b></a>
@@ -20,59 +20,70 @@
 
 ---
 
-### 🏛️ About Me
+### About Me
 
-I'm Nishant, a self-taught developer exploring software engineering, AI agents, automation, and emerging desktop & browser architectures. I enjoy experimenting with ideas, building independent projects, and learning through hands-on development.
+I'm Nishant, a self-taught developer focused on building fast, reliable, and minimal desktop and command-line tools. I enjoy exploring audio engines, streaming protocols, and clean terminal interfaces.
 
-- **Desktop Systems:** Multi-process architectures, modular apps, and performant local pipelines.
-- **Browser Tech:** Chromium internals, custom browser interfaces, protocol handlers, and extensions.
-- **Automation & Tools:** Streamlined workflows, headless browser scrapers, and developer tooling.
-- **AI & Agentic Systems:** Exploring autonomous planning, tool calling, and local LLM integrations.
-
----
-
-### 🚀 Featured Work & Projects
-
-#### [01 // North Tracks](https://github.com/nishantkumrmishra/north-tracks)
-> **320k Studio Audio Downloader · Python · PyPI Package · Standalone Application**
-> 
-> High-performance terminal music downloader featuring 320kbps Akamai stream extraction, dual Apple iTunes HD + JioSaavn artwork verification, and automated category-first library routing.
+- **Desktop & CLI Architecture:** Focused on lightweight binaries, single-screen terminal dashboards, and local file organization.
+- **Audio & Media Pipelines:** Stream decryption, metadata tagging, and multi-tier artwork verification.
+- **Developer Experience:** 1-click installers, standalone executables, and zero-configuration setups.
 
 ---
 
-### 🛠️ Technologies & Stack
+### Featured Project: North Tracks
+
+<p align="center">
+  <a href="https://github.com/nishantkumrmishra/north-tracks">
+    <img src="docs/assets/northtracks-cli.png" alt="North Tracks Terminal Interface" width="100%">
+  </a>
+</p>
+
+#### [North Tracks — 320k Studio Downloader & Library Engine](https://github.com/nishantkumrmishra/north-tracks)
+
+North Tracks is a minimal command-line music downloader and library organizer. It allows you to paste Spotify playlists, YouTube links, or song titles, and downloads authentic 320kbps audio with official HD artwork, automatically organizing every track into genre folders.
+
+**Key Architecture & What Was Built:**
+* **Clean Single-Screen Terminal UI:** Built a flicker-free dashboard that clears terminal clutter on launch, maintains in-place stream progress updates, and provides simple shortcut navigation (`Ctrl+C` to exit, `:stats`, `:repair`, `:dest`).
+* **320kbps Studio Stream Decryption:** Extracts studio-grade unthrottled AAC-LC audio directly from Akamai CDN nodes using DES-ECB stream decryption and bitrate rewriting.
+* **Dual Artwork Verification Pipeline:** Verifies official album art using Apple iTunes HD (600×600 / 1000×1000) with automatic fallback to JioSaavn's 500×500 CDN repository.
+* **Intelligent Library Routing:** Categorizes songs into dedicated genre folders (`Indian Indie/`, `Bollywood/`, `Punjabi/`, `Pop/`, `Rock/`, `Hip-Hop/`) based on artist fingerprinting and language heuristics rather than flat playlist dumps.
+* **Fuzzy Duplicate Detection:** Fingerprints library files before requesting streams to skip already-downloaded tracks and film remasters automatically.
+* **Standalone Windows Executable:** Bundled into a portable 17MB executable (`NorthTracks.exe`) with a custom application icon that runs on any PC with zero Python or dependencies required.
+* **Published on PyPI:** Globally installable via `pip install northtracks` across Windows, macOS, and Linux.
+
+---
+
+### Technologies & Stack
 
 <p>
-  <img src="https://img.shields.io/badge/JavaScript-222222?style=flat-square&logo=javascript&logoColor=white" alt="JavaScript" />
-  <img src="https://img.shields.io/badge/React-222222?style=flat-square&logo=react&logoColor=white" alt="React" />
-  <img src="https://img.shields.io/badge/Electron-222222?style=flat-square&logo=electron&logoColor=white" alt="Electron" />
-  <img src="https://img.shields.io/badge/HTML5-222222?style=flat-square&logo=html5&logoColor=white" alt="HTML5" />
-  <img src="https://img.shields.io/badge/CSS3-222222?style=flat-square&logo=css3&logoColor=white" alt="CSS3" />
-  <img src="https://img.shields.io/badge/Git-222222?style=flat-square&logo=git&logoColor=white" alt="Git" />
-  <img src="https://img.shields.io/badge/GitHub-222222?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
+  <img src="https://img.shields.io/badge/Python-222222?style=flat-square&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/PyPI-222222?style=flat-square&logo=pypi&logoColor=white" alt="PyPI" />
   <img src="https://img.shields.io/badge/Windows-222222?style=flat-square&logo=windows&logoColor=white" alt="Windows" />
   <img src="https://img.shields.io/badge/Linux-222222?style=flat-square&logo=linux&logoColor=white" alt="Linux" />
   <img src="https://img.shields.io/badge/PowerShell-222222?style=flat-square&logo=powershell&logoColor=white" alt="PowerShell" />
+  <img src="https://img.shields.io/badge/Git-222222?style=flat-square&logo=git&logoColor=white" alt="Git" />
+  <img src="https://img.shields.io/badge/GitHub-222222?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
+  <img src="https://img.shields.io/badge/JavaScript-222222?style=flat-square&logo=javascript&logoColor=white" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/React-222222?style=flat-square&logo=react&logoColor=white" alt="React" />
+  <img src="https://img.shields.io/badge/Electron-222222?style=flat-square&logo=electron&logoColor=white" alt="Electron" />
 </p>
-
-*Exploring:* **Chromium** · **AI Agents** · **Browser Automation** · **Plugin Architectures** · **API Integrations**
 
 ---
 
-### 📐 Engineering Principles
+### Engineering Principles
 
-1. **Build first, learn continuously** — Deepest insights come from shipping real code and testing architectures hands-on.
-2. **Keep software simple and maintainable** — Avoid premature complexity; write readable, predictable software.
-3. **Prefer modular and extensible architecture** — Decouple core logic and build clean plugin boundaries.
-4. **Experiment with ideas and technologies** — Stay curious about emerging tools, runtimes, and models.
-5. **Share useful work with the open-source community** — Give back through public tools, clean documentation, and shared experiments.
+1. **Build first, learn continuously:** Practical insights come from shipping real code and testing architectures hands-on.
+2. **Keep software simple and maintainable:** Avoid unnecessary complexity; prioritize readable, predictable software.
+3. **Prefer modular and extensible design:** Decouple core engine logic, formatters, and network handlers into isolated modules.
+4. **Clean user interfaces:** Minimize visual noise, eliminate terminal jitter, and keep navigation intuitive.
+5. **Share useful work:** Provide standalone builds, clean documentation, and public packages for the open-source community.
 
 ---
 
 <div align="center">
 
-### 🌐 [Visit the Live Portfolio Website](https://nishantkumrmishra.github.io/nishantkumrmishra/)
+### [Visit the Live Portfolio Website](https://nishantkumrmishra.github.io/nishantkumrmishra/)
 
-*Learning, building, experimenting, and improving — one project at a time.*
+*Learning, building, experimenting, and improving.*
 
 </div>
