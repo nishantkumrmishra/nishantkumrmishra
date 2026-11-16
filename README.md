@@ -8,15 +8,9 @@
 
 `Open-Source Developer · Desktop & Browser Architectures · India`
 
-*Build first. Learn continuously.*
-
-<br/>
-
-<a href="https://nishantkumrmishra.github.io/nishantkumrmishra/">
-  <img src="docs/assets/live-portfolio.svg" alt="Visit Live Portfolio - nishantkumrmishra.github.io" width="420">
-</a>
-
-<br/><br/>
+<p>
+  <a href="https://nishantkumrmishra.github.io/nishantkumrmishra/"><b>Click to open the website →</b></a>
+</p>
 
 <img src="https://komarev.com/ghpvc/?username=nishantkumrmishra&label=PROFILE%20VIEWS&color=222222&style=flat-square" alt="Profile views" />
 <img src="https://img.shields.io/github/followers/nishantkumrmishra?label=FOLLOWERS&style=flat-square&color=222222&labelColor=555555" alt="Followers" />
@@ -39,17 +33,22 @@ I'm Nishant, a self-taught developer exploring software engineering, AI agents, 
 
 ### 🚀 Featured Work & Projects
 
-#### [01 // LuckyGuy Desktop](https://nishantkumrmishra.github.io/nishantkumrmishra/#work)
+#### [01 // North Tracks](https://github.com/nishantkumrmishra/north-tracks)
+> **320k Studio Audio Downloader · Python · PyPI Package · Standalone Application**
+> 
+> High-performance terminal music downloader featuring 320kbps Akamai stream extraction, dual Apple iTunes HD + JioSaavn artwork verification, and automated category-first library routing.
+
+#### [02 // LuckyGuy Desktop](https://nishantkumrmishra.github.io/nishantkumrmishra/#work)
 > **Desktop Application Platform · Electron · React · Node.js · Local IPC**
 > 
 > High-performance media management and organization platform engineered for responsive desktop indexing, clean metadata extraction, and local playback with zero-leak architecture.
 
-#### [02 // LuckyGuy Extensions](https://nishantkumrmishra.github.io/nishantkumrmishra/#work)
+#### [03 // LuckyGuy Extensions](https://nishantkumrmishra.github.io/nishantkumrmishra/#work)
 > **Modular Plugin SDK · TypeScript · Extensibility · Sandbox**
 > 
 > Extensible plugin framework and software development kit providing sandboxed third-party integrations, custom API hooks, and runtime capability augmentation.
 
-#### [03 // Browser Experiments](https://nishantkumrmishra.github.io/nishantkumrmishra/#work)
+#### [04 // Browser Experiments](https://nishantkumrmishra.github.io/nishantkumrmishra/#work)
 > **Browser Internals · Chromium · Automation · DOM Hooks · Protocol APIs**
 > 
 > Research and exploratory engineering into Chromium engine internals, custom UI shell layers, protocol handlers, and automated browser workflows.
