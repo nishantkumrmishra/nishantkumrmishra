@@ -1,0 +1,801 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nishant Kumar Mishra · Open-Source Developer</title>
+<meta name="description" content="Portfolio of Nishant Kumar Mishra — Self-taught developer exploring software engineering, AI agents, automation, and emerging desktop &amp; browser architectures.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070707;
+  --bg-card:#0a0a0a;
+  --bg-card-hover:#111111;
+  --fg:#f2f2f2;
+  --fg-dim:#b0b0b0;
+  --mut:#666666;
+  --line:#1b1b1b;
+  --line-light:#292929;
+  --cross:#505050;
+  --grid-pattern:rgba(255,255,255,0.025);
+  --nav-bg:rgba(7,7,7,0.85);
+  --btn-bg:#ffffff;
+  --btn-fg:#000000;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono',monospace;
+  --pad:clamp(20px,4vw,48px);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{
+  background-color:var(--bg);
+  background-image:radial-gradient(var(--grid-pattern) 1px, transparent 1px);
+  background-size:24px 24px;
+  color:var(--fg);
+  font-family:'Inter Tight',system-ui,-apple-system,sans-serif;
+  font-weight:300;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+
+/* top scroll progress bar */
+#scrollProgress{
+  position:fixed;
+  top:0;
+  left:0;
+  height:2px;
+  width:0%;
+  background:var(--fg);
+  z-index:100;
+  transition:width .1s linear;
+}
+
+/* blueprint crosshairs */
+.blueprint-box{
+  position:relative;
+  border:1px solid var(--line);
+  background:var(--bg-card);
+  transition:border-color .2s ease;
+}
+.cross{
+  position:absolute;
+  font-family:var(--mono);
+  font-size:12px;
+  color:var(--cross);
+  line-height:1;
+  user-select:none;
+  pointer-events:none;
+  z-index:4;
+}
+.cross.tl{top:-6px;left:-5px}
+.cross.tr{top:-6px;right:-5px}
+.cross.bl{bottom:-6px;left:-5px}
+.cross.br{bottom:-6px;right:-5px}
+
+.bp-mono{
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:.08em;
+  color:var(--mut);
+  text-transform:uppercase;
+}
+
+/* nav */
+nav{
+  position:sticky;
+  top:0;
+  z-index:40;
+  background:var(--nav-bg);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+nav .wrap{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:60px;
+  font-size:13px;
+}
+.brand{
+  font-weight:400;
+  letter-spacing:-.01em;
+}
+nav ul{display:flex;gap:24px;list-style:none;align-items:center}
+nav ul a{
+  color:var(--mut);
+  transition:color .2s;
+}
+nav ul a:hover, nav ul a.active{color:var(--fg)}
+
+.nav-actions{display:flex;align-items:center;gap:12px}
+
+.nav-btn{
+  font-family:var(--mono);
+  font-size:11px;
+  padding:6px 14px;
+  border:1px solid var(--btn-bg);
+  background:var(--btn-bg);
+  color:var(--btn-fg);
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  cursor:pointer;
+  transition:all .2s;
+}
+.nav-btn:hover{background:transparent;color:var(--fg)}
+
+/* metadata strip: clean open architectural columns */
+.blueprint-strip{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:clamp(16px, 2.5vw, 32px);
+  margin-top:36px;
+  background:transparent;
+}
+.bp-cell{
+  padding-bottom:12px;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  background:transparent;
+  transition:border-color .2s ease;
+}
+.bp-cell strong{
+  font-weight:400;
+  color:var(--fg);
+  font-size:13px;
+  letter-spacing:-.01em;
+}
+
+/* hero grid */
+.heroGrid{
+  display:grid;
+  grid-template-columns:1.22fr 0.78fr;
+  gap:clamp(32px,5vw,64px);
+  align-items:center;
+  margin-top:clamp(40px,6vw,72px);
+  margin-bottom:clamp(50px,7vw,80px);
+}
+.heroLeft h1{
+  font-weight:300;
+  font-size:clamp(44px,6.8vw,102px);
+  line-height:.94;
+  letter-spacing:-.035em;
+  text-transform:uppercase;
+  margin-bottom:24px;
+}
+.heroLeft h1 span{display:block;overflow:hidden}
+.heroLeft h1 span i{
+  display:block;
+  font-style:normal;
+  transform:translateY(105%);
+  animation:up .8s cubic-bezier(.16,1,.3,1) forwards;
+}
+.heroLeft h1 span:nth-child(2) i{animation-delay:.1s}
+@keyframes up{to{transform:none}}
+
+.heroDesc{
+  max-width:46ch;
+  color:var(--fg-dim);
+  font-size:clamp(15px,1.3vw,17px);
+  line-height:1.6;
+  margin-bottom:28px;
+}
+.heroBtnRow{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-bottom:32px;
+}
+.btn-rect{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:var(--btn-bg);
+  color:var(--btn-fg);
+  padding:10px 22px;
+  font-size:12px;
+  font-weight:500;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  border:1px solid var(--btn-bg);
+  cursor:pointer;
+  transition:all .2s;
+  font-family:var(--mono);
+}
+.btn-rect:hover{background:transparent;color:var(--fg)}
+.btn-rect.sec{
+  background:transparent;
+  color:var(--fg);
+  border-color:var(--line-light);
+}
+.btn-rect.sec:hover{border-color:var(--fg);background:rgba(255,255,255,.05)}
+
+.specBar{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  border-top:1px solid var(--line);
+  padding-top:16px;
+  gap:16px;
+}
+.specItem{display:flex;flex-direction:column;gap:4px}
+.specItem strong{font-weight:400;font-size:12px;color:var(--fg-dim)}
+
+/* portrait blueprint frame */
+.heroRight{display:flex;justify-content:flex-end}
+.portraitFrame{
+  width:100%;
+  max-width:400px;
+  background:var(--bg-card);
+  overflow:hidden;
+}
+.portraitFrame img{
+  width:100%;
+  height:auto;
+  aspect-ratio:3/4;
+  object-fit:cover;
+  object-position:center top;
+  display:block;
+}
+
+/* cinematic banner (blueprint spec architecture) */
+.bannerSection{
+  margin:clamp(50px,7vw,100px) 0;
+}
+.bannerBlueprint{
+  width:100%;
+  overflow:hidden;
+}
+.bannerHeader{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 20px;
+  border-bottom:1px solid var(--line);
+  background:var(--bg-card);
+  font-size:11px;
+}
+.bannerImgWrap{
+  position:relative;
+  width:100%;
+  height:clamp(320px,46vw,600px);
+  background:#050505;
+  overflow:hidden;
+}
+.bannerImg{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+}
+.bannerFooter{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  border-top:1px solid var(--line);
+  background:var(--bg-card);
+}
+.bf-item{padding:18px 24px}
+.bf-item:first-child{border-right:1px solid var(--line)}
+.bf-item p{font-size:13px;color:var(--fg-dim);margin-top:6px;line-height:1.55}
+
+/* sections */
+section{padding:clamp(60px,8vw,110px) 0 0}
+.head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-top:1px solid var(--line);
+  padding-top:16px;
+  margin-bottom:clamp(30px,5vw,60px);
+}
+.head .bp-mono{font-size:11px}
+.big{
+  font-size:clamp(22px,2.9vw,40px);
+  line-height:1.2;
+  text-transform:uppercase;
+  letter-spacing:-.01em;
+  max-width:22em;
+  margin-left:auto;
+  color:var(--fg);
+}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.desc{font-size:14px;color:var(--fg-dim);max-width:36ch;min-height:6em}
+.list{list-style:none}
+.list li{
+  font-size:clamp(24px,3.4vw,44px);
+  text-transform:uppercase;
+  letter-spacing:-.02em;
+  color:var(--mut);
+  cursor:pointer;
+  transition:color .2s,transform .2s;
+  line-height:1.25;
+  outline-offset:4px;
+}
+.list li:hover,.list li.on,.list li:focus-visible{color:var(--fg);transform:translateX(8px)}
+
+/* rows */
+.row{
+  display:grid;
+  grid-template-columns:100px 1.4fr 1fr 1fr;
+  gap:16px;
+  align-items:center;
+  padding:16px 14px;
+  border-top:1px solid var(--line);
+  font-size:13px;
+  color:var(--fg-dim);
+  transition:background .2s,color .2s;
+}
+.row:last-child{border-bottom:1px solid var(--line)}
+.row:hover{background:var(--fg);color:var(--bg)}
+.row strong{font-weight:400;font-size:15px;color:inherit}
+.row.t{grid-template-columns:200px 1fr}
+.row.p{grid-template-columns:80px 1fr}
+.row.p strong{font-size:clamp(15px,1.8vw,20px)}
+.row .rt{text-align:right}
+
+/* architectural technical work rows */
+.workTable{
+  display:flex;
+  flex-direction:column;
+  border-top:1px solid var(--line);
+}
+.workRow{
+  display:grid;
+  grid-template-columns:60px 1fr auto;
+  gap:clamp(16px,3vw,36px);
+  align-items:flex-start;
+  padding:clamp(24px,3.5vw,36px) 14px;
+  border-bottom:1px solid var(--line);
+  transition:background-color .2s ease;
+}
+.workRow:hover{
+  background:rgba(255,255,255,0.025);
+}
+.workNum{
+  font-family:var(--mono);
+  font-size:14px;
+  color:var(--mut);
+  padding-top:4px;
+}
+.workInfo{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.workTitleRow{
+  display:flex;
+  align-items:baseline;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.workTitleRow h3{
+  font-size:clamp(18px,2vw,24px);
+  font-weight:400;
+  letter-spacing:-.015em;
+  color:var(--fg);
+}
+.workType{
+  font-size:11px;
+}
+.workDesc{
+  font-size:14px;
+  color:var(--fg-dim);
+  line-height:1.6;
+  max-width:68ch;
+}
+.workTags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-top:4px;
+}
+.workTags span{
+  font-family:var(--mono);
+  font-size:10px;
+  padding:3px 9px;
+  border:1px solid var(--line);
+  color:var(--mut);
+  background:rgba(255,255,255,0.03);
+}
+.workAction{
+  padding-top:4px;
+}
+.workBtn{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-family:var(--mono);
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  padding:8px 16px;
+  border:1px solid var(--line-light);
+  color:var(--fg);
+  background:transparent;
+  transition:all .2s;
+  white-space:nowrap;
+}
+.workBtn:hover{
+  border-color:var(--fg);
+  background:var(--fg);
+  color:var(--bg);
+}
+
+footer{margin-top:clamp(80px,10vw,140px);border-top:1px solid var(--line);padding:50px 0 40px}
+footer h2{
+  font-weight:300;
+  font-size:clamp(40px,8vw,120px);
+  letter-spacing:-.035em;
+  line-height:1;
+  text-transform:uppercase;
+  margin-bottom:28px;
+}
+footer .wrap>div{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+  font-size:12px;
+  color:var(--mut);
+  margin-top:50px;
+}
+
+@media(max-width:800px){
+  nav ul li:not(:last-child){display:none}
+  .split{grid-template-columns:1fr}
+  .row,.row.t,.row.p{grid-template-columns:1fr;gap:4px}
+  .row .rt{text-align:left}
+  .big{margin-left:0}
+  .heroGrid{grid-template-columns:1fr;gap:40px}
+  .heroRight{justify-content:flex-start}
+  .portraitFrame{max-width:340px}
+  .blueprint-strip{grid-template-columns:1fr 1fr}
+  .bannerFooter{grid-template-columns:1fr}
+  .bf-item:first-child{border-right:none;border-bottom:1px solid var(--line)}
+  .workRow{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+  .workNum{display:none}
+}
+@media(max-width:550px){
+  .blueprint-strip{grid-template-columns:1fr}
+  .specBar{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .heroLeft h1 span i{transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div id="scrollProgress"></div>
+
+<nav id="nav"><div class="wrap">
+  <a class="brand" href="index.html">Nishant Kumar Mishra</a>
+  <ul>
+    <li><a href="#top">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#interests">Interests</a></li>
+    <li><a href="#tech">Technologies</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#approach">Approach</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a class="nav-btn" href="https://github.com/nishantkumrmishra" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></nav>
+
+<main id="top" class="wrap">
+  <!-- Clean Open Metadata Columns -->
+  <div class="blueprint-strip">
+    <div class="bp-cell">
+      <span class="bp-mono">01 // ROLE</span>
+      <strong>Open-Source Developer</strong>
+    </div>
+    <div class="bp-cell">
+      <span class="bp-mono">02 // FOCUS</span>
+      <strong>Desktop &amp; Browser Tools</strong>
+    </div>
+    <div class="bp-cell">
+      <span class="bp-mono">03 // PATH</span>
+      <strong>Self-Taught Engineer</strong>
+    </div>
+    <div class="bp-cell">
+      <span class="bp-mono">04 // LOCATION</span>
+      <strong>India · Remote</strong>
+    </div>
+  </div>
+
+  <!-- Hero Grid: Clean Headline Left, Pure Portrait Frame Right -->
+  <div class="heroGrid">
+    <div class="heroLeft">
+      <h1>
+        <span><i>Build first.</i></span>
+        <span><i>Learn continuously.</i></span>
+      </h1>
+      <p class="heroDesc">
+        I'm Nishant, a self-taught developer exploring software engineering, AI agents, automation, and emerging desktop &amp; browser architectures.
+      </p>
+      <div class="heroBtnRow">
+        <a class="btn-rect" href="#work">View Work &rarr;</a>
+        <a class="btn-rect sec" href="https://github.com/nishantkumrmishra" target="_blank" rel="noopener">GitHub Profile &nearr;</a>
+        <button class="btn-rect sec" id="copyBtn" type="button" data-handle="https://github.com/nishantkumrmishra">
+          <span id="copyText">Quick Connect</span>
+        </button>
+      </div>
+      <div class="specBar">
+        <div class="specItem">
+          <span class="bp-mono">DEVELOPMENT STACK</span>
+          <strong>JavaScript · React · Electron · HTML / CSS</strong>
+        </div>
+        <div class="specItem">
+          <span class="bp-mono">AREAS OF FOCUS</span>
+          <strong>Chromium · AI Agents · Automation · Modular SDKs</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="heroRight">
+      <div class="portraitFrame blueprint-box">
+        <span class="cross tl">+</span><span class="cross tr">+</span>
+        <span class="cross bl">+</span><span class="cross br">+</span>
+        <img src="assets/portrait.png" alt="Portrait of Nishant Kumar Mishra">
+      </div>
+    </div>
+  </div>
+
+  <!-- Blueprint Banner Spec Container (Pure Image, No Dimming Overlays) -->
+  <div class="bannerSection">
+    <div class="bannerBlueprint blueprint-box">
+      <span class="cross tl">+</span><span class="cross tr">+</span>
+      <span class="cross bl">+</span><span class="cross br">+</span>
+      
+      <div class="bannerHeader">
+        <span class="bp-mono">01 // WORKSPACE &amp; TOOLS</span>
+        <span class="bp-mono">NISHANT KUMAR MISHRA</span>
+      </div>
+
+      <div class="bannerImgWrap">
+        <img class="bannerImg" src="assets/banner.png" alt="Nishant Kumar Mishra in architectural studio environment">
+      </div>
+
+      <div class="bannerFooter">
+        <div class="bf-item">
+          <span class="bp-mono">PHILOSOPHY</span>
+          <p>Turning ideas into independent, high-performance tools through hands-on development.</p>
+        </div>
+        <div class="bf-item">
+          <span class="bp-mono">FOCUS</span>
+          <p>Modular architectures, browser automation, and developer ecosystems built for speed and maintainability.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="head">
+      <span class="bp-mono">01 // ABOUT</span>
+      <span class="bp-mono">NISHANT KUMAR MISHRA</span>
+    </div>
+    <p class="big">I enjoy experimenting with ideas, building independent projects, and learning through hands-on development. I build useful software, explore new architectures, and learn how things work under the hood.</p>
+  </section>
+
+  <section id="interests">
+    <div class="head">
+      <span class="bp-mono">02 // INTERESTS</span>
+      <span class="bp-mono">AREAS OF CURIOSITY</span>
+    </div>
+    <div class="split">
+      <p class="desc" id="desc"></p>
+      <ul class="list" id="list"></ul>
+    </div>
+  </section>
+
+  <section id="tech">
+    <div class="head">
+      <span class="bp-mono">03 // TECHNOLOGIES</span>
+      <span class="bp-mono">TOOLS &amp; EXPLORATION</span>
+    </div>
+    <div class="row t"><span class="bp-mono">Development</span><strong>JavaScript, React, Electron, HTML / CSS</strong></div>
+    <div class="row t"><span class="bp-mono">Exploring</span><strong>Chromium, AI Agents, Browser Automation, Plugin Architectures, API Integrations</strong></div>
+    <div class="row t"><span class="bp-mono">Tools</span><strong>Git, GitHub, Windows, Linux, PowerShell</strong></div>
+  </section>
+
+  <!-- Architectural Work Rows (Option A) -->
+  <section id="work">
+    <div class="head">
+      <span class="bp-mono">04 // SELECTED WORK</span>
+      <span class="bp-mono">FEATURED PROJECTS</span>
+    </div>
+
+    <div class="workTable">
+      <!-- Project 01 -->
+      <div class="workRow">
+        <div class="workNum">
+          <span>01</span>
+        </div>
+        <div class="workInfo">
+          <div class="workTitleRow">
+            <h3>LuckyGuy Desktop</h3>
+            <span class="workType bp-mono">DESKTOP APP // OPEN SOURCE</span>
+          </div>
+          <p class="workDesc">Full-featured media management and organization platform engineered for high-performance indexing, local metadata extraction, and responsive desktop playback.</p>
+          <div class="workTags">
+            <span>Electron</span>
+            <span>React</span>
+            <span>Node.js</span>
+            <span>Local IPC</span>
+          </div>
+        </div>
+        <div class="workAction">
+          <a class="workBtn" href="https://github.com/nishantkumrmishra" target="_blank" rel="noopener">
+            <span>Inspect Code</span>
+            <span class="arrow">&nearr;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 02 -->
+      <div class="workRow">
+        <div class="workNum">
+          <span>02</span>
+        </div>
+        <div class="workInfo">
+          <div class="workTitleRow">
+            <h3>LuckyGuy Extensions</h3>
+            <span class="workType bp-mono">MODULAR SDK // ARCHITECTURE</span>
+          </div>
+          <p class="workDesc">Extensible plugin framework and software development kit providing sandboxed third-party integrations and dynamic runtime capability expansion.</p>
+          <div class="workTags">
+            <span>Plugin SDK</span>
+            <span>Modular API</span>
+            <span>Sandbox</span>
+            <span>Architecture</span>
+          </div>
+        </div>
+        <div class="workAction">
+          <a class="workBtn" href="https://github.com/nishantkumrmishra" target="_blank" rel="noopener">
+            <span>Inspect Code</span>
+            <span class="arrow">&nearr;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 03 -->
+      <div class="workRow">
+        <div class="workNum">
+          <span>03</span>
+        </div>
+        <div class="workInfo">
+          <div class="workTitleRow">
+            <h3>Browser Experiments</h3>
+            <span class="workType bp-mono">BROWSER INTERNALS // RESEARCH</span>
+          </div>
+          <p class="workDesc">Research and engineering experiments exploring Chromium browser internals, custom UI shell layers, protocol handlers, and DOM automation workflows.</p>
+          <div class="workTags">
+            <span>Chromium</span>
+            <span>Automation</span>
+            <span>DOM Hooks</span>
+            <span>Protocol APIs</span>
+          </div>
+        </div>
+        <div class="workAction">
+          <a class="workBtn" href="https://github.com/nishantkumrmishra" target="_blank" rel="noopener">
+            <span>Inspect Code</span>
+            <span class="arrow">&nearr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="approach">
+    <div class="head">
+      <span class="bp-mono">05 // APPROACH</span>
+      <span class="bp-mono">ENGINEERING PRINCIPLES</span>
+    </div>
+    <div class="row p"><span>01</span><strong>Build first, learn continuously</strong></div>
+    <div class="row p"><span>02</span><strong>Keep software simple and maintainable</strong></div>
+    <div class="row p"><span>03</span><strong>Prefer modular and extensible architecture</strong></div>
+    <div class="row p"><span>04</span><strong>Experiment with ideas and technologies</strong></div>
+    <div class="row p"><span>05</span><strong>Share useful work with the open-source community</strong></div>
+  </section>
+
+  <section id="beyond">
+    <div class="head">
+      <span class="bp-mono">06 // BEYOND</span>
+      <span class="bp-mono">PERSONAL CURIOSITIES</span>
+    </div>
+    <p class="big">PC gaming, technology, music, hardware, and exploring interesting software.</p>
+  </section>
+</main>
+
+<footer><div class="wrap">
+  <h2>Let's build</h2>
+  <a class="nav-btn" href="https://github.com/nishantkumrmishra" target="_blank" rel="noopener">Open GitHub &nearr;</a>
+  <div>
+    <span class="bp-mono">&copy; <span id="yr"></span> Nishant Kumar Mishra</span>
+    <a class="bp-mono" href="#top">Back to top &uarr;</a>
+  </div>
+</div></footer>
+
+<script>
+/* ---- 1px Top Scroll Progress Bar & Scroll-Spy ---- */
+const progressBar=document.getElementById('scrollProgress');
+const sections=document.querySelectorAll('main section, main > div');
+const navLinks=document.querySelectorAll('nav ul a');
+
+window.addEventListener('scroll',()=>{
+  const total=document.documentElement.scrollHeight-window.innerHeight;
+  const progress=total>0?(window.scrollY/total)*100:0;
+  progressBar.style.width=progress+'%';
+
+  /* Scroll spy */
+  let current='';
+  sections.forEach(sec=>{
+    const top=sec.offsetTop-120;
+    if(window.scrollY>=top){
+      current=sec.getAttribute('id')||'';
+    }
+  });
+  navLinks.forEach(link=>{
+    const target=link.getAttribute('href')||'';
+    if(target==='#'+current || (current==='' && target==='#top')){
+      link.classList.add('active');
+    }else{
+      link.classList.remove('active');
+    }
+  });
+},{passive:true});
+
+/* ---- Quick Connect / Copy Action ---- */
+const copyBtn=document.getElementById('copyBtn');
+const copyText=document.getElementById('copyText');
+if(copyBtn && copyText){
+  copyBtn.addEventListener('click',()=>{
+    const handle=copyBtn.getAttribute('data-handle')||'https://github.com/nishantkumrmishra';
+    navigator.clipboard.writeText(handle).then(()=>{
+      const orig=copyText.textContent;
+      copyText.textContent='COPIED LINK!';
+      setTimeout(()=>{copyText.textContent=orig},2200);
+    }).catch(()=>{
+      window.open(handle,'_blank');
+    });
+  });
+}
+
+/* ---- Interests list: hover, focus or click to change the text ---- */
+const interests=[
+ ["Open-source development","Building public tools and sharing useful work with the developer community."],
+ ["Desktop apps & architecture","Designing desktop applications with clean, modular software architecture."],
+ ["AI & agentic systems","Exploring AI agents and systems that can plan and act on their own."],
+ ["Browser tech & Chromium","Working with Chromium, custom interfaces, and browser extensions."],
+ ["Automation & dev tools","Building tools and workflows that remove repetitive work."],
+ ["Media & multimedia","Media organization, metadata, and playback in desktop apps."],
+ ["Cybersecurity","Experimenting with systems to understand how they work and how they break."]
+];
+const list=document.getElementById('list'),desc=document.getElementById('desc');
+function pick(i){[...list.children].forEach((li,n)=>li.classList.toggle('on',n===i));desc.textContent=interests[i][1]}
+interests.forEach((it,i)=>{
+  const li=document.createElement('li');li.textContent=it[0];li.tabIndex=0;
+  li.onmouseenter=li.onfocus=li.onclick=()=>pick(i);
+  list.appendChild(li);
+});
+pick(0);
+
+/* ---- Dynamic footer year ---- */
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
