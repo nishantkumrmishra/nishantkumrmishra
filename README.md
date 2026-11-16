@@ -38,21 +38,6 @@ I'm Nishant, a self-taught developer exploring software engineering, AI agents, 
 > 
 > High-performance terminal music downloader featuring 320kbps Akamai stream extraction, dual Apple iTunes HD + JioSaavn artwork verification, and automated category-first library routing.
 
-#### [02 // LuckyGuy Desktop](https://nishantkumrmishra.github.io/nishantkumrmishra/#work)
-> **Desktop Application Platform · Electron · React · Node.js · Local IPC**
-> 
-> High-performance media management and organization platform engineered for responsive desktop indexing, clean metadata extraction, and local playback with zero-leak architecture.
-
-#### [03 // LuckyGuy Extensions](https://nishantkumrmishra.github.io/nishantkumrmishra/#work)
-> **Modular Plugin SDK · TypeScript · Extensibility · Sandbox**
-> 
-> Extensible plugin framework and software development kit providing sandboxed third-party integrations, custom API hooks, and runtime capability augmentation.
-
-#### [04 // Browser Experiments](https://nishantkumrmishra.github.io/nishantkumrmishra/#work)
-> **Browser Internals · Chromium · Automation · DOM Hooks · Protocol APIs**
-> 
-> Research and exploratory engineering into Chromium engine internals, custom UI shell layers, protocol handlers, and automated browser workflows.
-
 ---
 
 ### 🛠️ Technologies & Stack
